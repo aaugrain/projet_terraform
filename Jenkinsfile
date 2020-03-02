@@ -1,6 +1,6 @@
 node(){
 
-// Définition du terraform Backend
+/* Définition du terraform Backend
   terraform {
     backend "azurerm" {
       resource_group_name  = "6lv1"
@@ -13,11 +13,20 @@ node(){
       tenant_id = "7a34e3a4-1808-4c92-946a-b78e8f9bdfd5"
     }
   }
+*/
+  
+  terraform {
+    backend "azurerm" {
+      bucket = "kiki.tfstate"
+      credentials = "./creds/serviceaccount.json"
+    }
+  }
+  
   
   stage('TF Plan') {
     container('terraform') {
       sh 'terraform init'
-      sh 'terraform plan -var-file=secret/backend.tfvars -var-file=main.tfvars'
+      sh 'terraform plan -var-file= -var-file=main.tfvars'
     }
   }
 
