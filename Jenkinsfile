@@ -1,4 +1,4 @@
-# Définition du terraform Backend
+// Définition du terraform Backend
 terraform {
   backend "azurerm" {
     resource_group_name  = "6lv1"
@@ -13,16 +13,13 @@ terraform {
 }
 
 pipeline {
-  agent any  environment {
-    SVC_ACCOUNT_KEY = credentials('terraform-auth')
-  }
-    
+
 stages {
   stage('TF Plan') {
        steps {
          container('terraform') {
            sh 'terraform init'
-           sh 'terraform plan -out myplan'
+           sh 'terraform plan'
          }
        }
    }
