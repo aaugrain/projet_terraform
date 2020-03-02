@@ -24,7 +24,7 @@ node(){
   
   
   stage('TF Plan') {
-    container('terraform') {
+    container('richard3') {
       sh 'terraform init'
       sh 'terraform plan -var-file= -var-file=main.tfvars'
     }
