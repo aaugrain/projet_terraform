@@ -14,6 +14,11 @@ node(){
     }
   }
 */
+
+  stage ('Clonegit_Dockerfile'){  
+    git url: 'https://github.com/aaugrain/projet_terraform',
+      branch: 'master'
+  }
   
   terraform {
     backend "azurerm" {
@@ -30,10 +35,6 @@ node(){
 //    }
   }
 
-  stage ('Clonegit_Dockerfile'){  
-    git url: 'https://github.com/aaugrain/projet_terraform',
-      branch: 'master'
-  }
   
   stage('Publish test results') {
     junit 'target/surefire-reports/*.xml'
