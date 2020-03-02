@@ -1,2 +1,2 @@
-master_jenkins ansible_port=22 ansible_host=??.??.??.?? ansible_user="master"
-
+master_jenkins ansible_port=22 ansible_host=40.89.159.226 ansible_user="vagrant"
+noeud ansible_port=22 ansible_host= ansible_user="vagrant"
