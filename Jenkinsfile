@@ -3,12 +3,15 @@ node(){
   stage ('Clonegit_Dockerfile'){  
     git url: 'https://github.com/aaugrain/projet_terraform',
       branch: 'master'
+  }
+  
+  stage ('tot') {
     withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
-      sh 'sudo cd terraform/terraform_noeud'
+      sh 'cd terraform/terraform_noeud'
       sh 'pwd'
       sh 'ls -al'
-      sh 'sudo terraform init'
-      sh 'sudo terraform apply -auto-approve -var-file=main.tfvars'
+      sh 'terraform init'
+      sh 'terraform apply -auto-approve -var-file=main.tfvars'
     }  
   }
 
