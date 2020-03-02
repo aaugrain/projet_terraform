@@ -24,10 +24,10 @@ node(){
   
   
   stage('TF Plan') {
-    container('richard3') {
+//    container('richard3') {
       sh 'terraform init'
       sh 'terraform plan -var-file= -var-file=main.tfvars'
-    }
+//    }
   }
 
   stage ('Clonegit_Dockerfile'){  
