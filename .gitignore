@@ -1,5 +1,5 @@
-/create_jenkins_master/.terraform
-/create_jenkins_master/secrets
-/create_jenkins_master/terraform.tfstate
-/create_jenkins_master/terraform.tfstate.backup
+/terraform/.terraform
+/terraform/secret
+/terraform/terraform.tfstate
+/terraform/terraform.tfstate.backup
 
