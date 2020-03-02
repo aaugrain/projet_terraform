@@ -5,22 +5,11 @@ node(){
       branch: 'master'
   }
 
- /*
-  terraform {
-    backend "azurerm" {
-      bucket = "kiki.tfstate"
-      credentials = "./creds/serviceaccount.json"
-    }
-  }
-  */
-
   stage('TF Plan') {
-//    container('richard3') {
     withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
       sh 'cd terraform/terraform_noeud'
       sh 'terraform init'
       sh 'terraform apply -auto-approve -var-file=main.tfvars'
-//    }
     }  
   }
   
