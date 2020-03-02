@@ -14,7 +14,7 @@ node(){
       pwd
       ls -al
       terraform init
-      terraform plan -var-file=main.tfvars
+      terraform plan -var-file=main.tfvars -var-file=$lapointe
       '''
     }  
   }
