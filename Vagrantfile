@@ -82,11 +82,11 @@ Vagrant.configure("2") do |config|
       yum install -y git2u-all
    
     # installation terraform
-      curl -s -LO https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip
+      curl -s -LO https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip
       yum install -y unzip
-      unzip terraform_0.12.20_linux_amd64.zip
+      unzip terraform_0.12.21_linux_amd64.zip
       mv terraform /usr/bin
-      rm -f terraform_0.12.20_linux_amd64.zip
+      rm -f terraform_0.12.21_linux_amd64.zip
  
     # installation az cli
       rpm --import https://packages.microsoft.com/keys/microsoft.asc
