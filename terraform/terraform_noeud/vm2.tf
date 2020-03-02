@@ -2,7 +2,7 @@
 resource "azurerm_subnet" "Subnet2" {
     name = "Subnet2"
     resource_group_name = "${var.name}"
-    virtual_network_name = "${azurerm_virtual_network.myFirstVnet.name}"
+    virtual_network_name = "${var.name_vnet}"
     address_prefix = "10.0.2.0/24"
 }
 resource "azurerm_network_security_group" "NSG2" {
