@@ -1,7 +1,7 @@
 #créer un NSG
 resource "azurerm_subnet" "Subnet2" {
     name = "Subnet2"
-    resource_group_name = "${azurerm_resource_group.rg.name}"
+    resource_group_name = "${var.name}"
     virtual_network_name = "${azurerm_virtual_network.myFirstVnet.name}"
     address_prefix = "10.0.2.0/24"
 }
