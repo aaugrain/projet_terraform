@@ -29,10 +29,14 @@ node(){
   
   stage('TF Plan') {
 //    container('richard3') {
+    withCredentials([file(credentialsId: 'bob', variable: 'jean')]) {
+    
+
       sh 'cd terraform/terraform_noeud'
       sh 'terraform init'
       sh 'terraform plan -var-file=main.tfvars'
 //    }
+    }  
   }
   
   stage('Publish test results') {
