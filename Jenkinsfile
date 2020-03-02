@@ -7,11 +7,13 @@ node(){
   
   stage ('tot') {
     withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
-      sh 'cd /data/jenkins/workspace/C-PAS-1-PIPE/C-1-TUBE/terraform/terraform_noeud'
-      sh 'pwd'
-      sh 'ls -al'
-      sh 'terraform init'
-      sh 'terraform apply -auto-approve -var-file=main.tfvars'
+      sh '''
+      cd /data/jenkins/workspace/C-PAS-1-PIPE/C-1-TUBE/terraform/terraform_noeud'
+      pwd
+      ls -al
+      terraform init
+      terraform apply -auto-approve -var-file=main.tfvars
+      '''
     }  
   }
 
