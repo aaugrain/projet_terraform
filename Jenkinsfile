@@ -1,3 +1,7 @@
+
+
+
+
 // Définition du terraform Backend
 terraform {
   backend "azurerm" {
@@ -14,15 +18,14 @@ terraform {
 
 pipeline {
 
-stages {
-  stage('TF Plan') {
-    steps {
-      container('terraform') {
-        sh 'terraform init'
-        sh 'terraform plan'
+  stages {
+    stage('TF Plan') {
+      steps {
+        container('terraform') {
+          sh 'terraform init'
+          sh 'terraform plan'
+          }
         }
       }
     }
-  }
-
 }
