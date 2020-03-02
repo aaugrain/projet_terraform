@@ -4,11 +4,11 @@ node(){
     git url: 'https://github.com/aaugrain/projet_terraform',
       branch: 'master'
     withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
-      sh 'cd terraform/terraform_noeud'
+      sh 'sudo cd terraform/terraform_noeud'
       sh 'pwd'
       sh 'ls -al'
-      sh 'terraform init'
-      sh 'terraform apply -auto-approve -var-file=main.tfvars'
+      sh 'sudo terraform init'
+      sh 'sudo terraform apply -auto-approve -var-file=main.tfvars'
     }  
   }
 
