@@ -12,7 +12,7 @@ node(){
       pwd
       ls -al
       terraform init
-      terraform apply -auto-approve -var-file=main.tfvars
+      terraform plan -var-file=main.tfvars
       '''
     }  
   }
