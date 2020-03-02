@@ -4,6 +4,7 @@ node(){
     git url: 'https://github.com/aaugrain/projet_terraform',
       branch: 'master'
   }
+
  /*
   terraform {
     backend "azurerm" {
@@ -12,12 +13,13 @@ node(){
     }
   }
   */
+
   stage('TF Plan') {
 //    container('richard3') {
     withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
       sh 'cd terraform/terraform_noeud'
       sh 'terraform init'
-      sh 'terraform plan -auto-approve -var-file=main.tfvars'
+      sh 'terraform apply -auto-approve -var-file=main.tfvars'
 //    }
     }  
   }
