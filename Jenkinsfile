@@ -8,6 +8,7 @@ node(){
   stage('TF Plan') {
     withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
       sh 'cd terraform/terraform_noeud'
+      sh 'pwd'
       sh 'terraform init'
       sh 'terraform apply -auto-approve -var-file=main.tfvars'
     }  
