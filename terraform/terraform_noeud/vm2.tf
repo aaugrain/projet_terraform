@@ -46,7 +46,7 @@ resource "azurerm_network_interface" "NetI2" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "${azurerm_subnet.Subnet2.id}"
+    subnet_id                     = azurerm_subnet.Subnet2.id
     private_ip_address_allocation = "Static"
     private_ip_address = "10.0.2.4"
   }
