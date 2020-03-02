@@ -1,0 +1,23 @@
+variable "subscription_id" {}
+variable "client_id" {}
+variable "client_secret" {}
+variable "tenant_id" {}
+variable "name" {}
+variable "location" {}
+variable "owner" {}
+variable "version" {}
+variable "name_vnet" {}
+variable "add_space" {
+  type = "list"
+}
+variable "name_subnet" {}
+variable "add_prefix" {}
+variable "name_nsg" {}
+variable "name_pubIp" {}
+variable "allocation_method" {}
+variable "nameNIC" {}
+variable "nameNICconfig" {}
+variable "nameVM" {}
+variable "vmSize" {}
+variable "keyData" {}
+variable "computer_name" {}
