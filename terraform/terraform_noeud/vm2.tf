@@ -60,7 +60,7 @@ resource "azurerm_network_interface" "NetI2" {
 resource "azurerm_virtual_machine" "vm2" {
   name                  = "vm2"
   location              = "${var.location}"
-  resource_group_name   = "${azurerm_resource_group.rg.name}"
+  resource_group_name   = "${var.name}"
   network_interface_ids = ["${azurerm_network_interface.NetI2.id}"]
   vm_size               = "Standard_B1s"
 
