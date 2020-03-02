@@ -29,9 +29,7 @@ node(){
   
   stage('TF Plan') {
 //    container('richard3') {
-    withCredentials([file(credentialsId: 'bob', variable: 'jean')]) {
-    
-
+    withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
       sh 'cd terraform/terraform_noeud'
       sh 'terraform init'
       sh 'terraform plan -var-file=main.tfvars'
