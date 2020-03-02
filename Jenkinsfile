@@ -5,8 +5,10 @@ node(){
       branch: 'master'
   }
   
+  
   stage ('tot') {
-    withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
+ //   withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
+    withCredentials([azureServicePrincipal('AZURCRE')]) {
       sh '''
       cd terraform/terraform_noeud
       pwd
