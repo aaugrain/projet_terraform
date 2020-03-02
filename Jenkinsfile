@@ -29,11 +29,11 @@ node(){
   
   stage('TF Plan') {
 //    container('richard3') {
+      sh 'cd terraform/terraform_noeud'
       sh 'terraform init'
-      sh 'terraform plan -var-file=terraform/main.tfvars'
+      sh 'terraform plan -var-file=main.tfvars'
 //    }
   }
-
   
   stage('Publish test results') {
     junit 'target/surefire-reports/*.xml'
