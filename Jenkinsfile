@@ -7,7 +7,7 @@ node(){
   
   stage ('tot') {
     withCredentials([file(credentialsId: 'bob', variable: 'lapointe')]) {
-      sh 'cd terraform/terraform_noeud'
+      sh 'cd /data/jenkins/workspace/C-PAS-1-PIPE/C-1-TUBE/terraform/terraform_noeud'
       sh 'pwd'
       sh 'ls -al'
       sh 'terraform init'
