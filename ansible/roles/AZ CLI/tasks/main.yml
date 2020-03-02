@@ -1,0 +1,37 @@
+---
+# tasks file for AZ CLI
+- name: 
+  rpm_key: 
+    key: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+- name:
+  file:
+    path: /etc/yum.repos.d/azure-cli.rep
+    state: touch
+- name:
+  blockinfile: 
+    path: /etc/yum.repos.d/azure-cli.rep
+    block: '[azure-cli]
+    
+    name=
+    
+    baseurl=
+    
+    enabled=1
+    
+    gpgcheck=1
+    
+    gpgkey=https://packages.microsoft.com/keys/microsoft.asc'
+
+- name: 
+  yum_repository:
+    name: Azure CLI
+    description: Azure CLI repo
+    baseurl: https://packages.microsoft.com/yumrepos/azure-cli
+    gpgcheck: true
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+  become: true
+
+- name:
+  yum:
+    name: azure-cli
