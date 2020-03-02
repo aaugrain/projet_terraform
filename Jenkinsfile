@@ -27,11 +27,10 @@ node(){
     }
   }
   
-  
   stage('TF Plan') {
 //    container('richard3') {
       sh 'terraform init'
-      sh 'terraform plan -var-file= -var-file=main.tfvars'
+      sh 'terraform plan -var-file=terraform/main.tfvars'
 //    }
   }
 
